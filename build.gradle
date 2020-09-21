@@ -5,6 +5,7 @@ plugins {
 
 group 'virtual_pets'
 version '1.0-SNAPSHOT'
+mainClassName = 'App'
 
 repositories {
     mavenCentral()
