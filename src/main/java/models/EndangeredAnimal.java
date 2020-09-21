@@ -15,21 +15,21 @@ public class EndangeredAnimal extends Wildlife{
 
     private String age;
     private String health;
-//    private String name;
-//    private String type;
 
     public EndangeredAnimal(String name) {
         this.name = name;
         this.type = DATABASE_TYPE;
     }
 
-    public String getAge() {
-        return age;
-    }
 
-    public String getHealth() {
-        return health;
-    }
+//
+//    public String getAge() {
+//        return age;
+//    }
+//
+//    public String getHealth() {
+//        return health;
+//    }
 //    public static List<EndangeredAnimal> all(){
 //            try (Connection con = DB.sql2o.open()){
 //                String queryEndangered = "SELECT * FROM animals WHERE type='endangered animal'";

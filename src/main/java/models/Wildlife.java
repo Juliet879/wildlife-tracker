@@ -6,6 +6,7 @@ public abstract class Wildlife implements DatabaseManagement {
     public String name;
     public String type;
     public int id;
+    public String getType;
 
     public String getName() {
         return name;

@@ -22,7 +22,18 @@ public class EndangeredAnimalTest {
     @Test
     public void animal_instantiateCorrectly_true(){
         EndangeredAnimal testAnimal = new EndangeredAnimal("Lion");
-        assertTrue(testAnimal instanceof EndangeredAnimal);
+        assertEquals(true,testAnimal instanceof EndangeredAnimal);
 
     }
+    @Test
+    public void animal_getNameInstantiateCorrectly_String(){
+        EndangeredAnimal testAnimal = new EndangeredAnimal("Lion");
+        assertEquals("Lion",testAnimal.getName());
+    }
+    @Test
+    public void animal_instantiateWithCorrectType_String(){
+        EndangeredAnimal testAnimal = new EndangeredAnimal("Lion");
+        assertEquals("Lion",testAnimal.getType);
+    }
+
 }
