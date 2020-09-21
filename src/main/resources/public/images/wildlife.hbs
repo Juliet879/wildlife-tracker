@@ -1,0 +1,88 @@
+{{#partial "content"}}
+    <div class="container">
+    <nav class="navbar justify-content-end bg-dark">
+        <ul class="nav">
+            <a class="nav-item nav-link" href="/"><li>HOME</li></a>
+            <a class="nav-item nav-link" href="/wildlife/new"><li>TRACK ANIMALS</li></a>
+            <a class="nav-item nav-link" href="/all-animals"><li>ALL ANIMALS</li></a>
+            <a class="nav-item nav-link" href="/sightings"><li>SIGHTINGS</li></a>
+
+        </ul>
+    </nav>
+        <div class=""tracker-form>
+            <div class="card p-4">
+            <h2 class="text-center">TRACK ANIMAL</h2>
+            <hr>
+                <a class="nav-link active" href="usual">Usual animals</a>
+                <a class="nav-link" href="#endangered">Endangered</a>
+
+            <div class="content">
+                <div id="usual">
+                    <h3 class="text-center">Usual animals</h3>
+                    <form action="/wildlife/new" method="post">
+                        <div class="form-group">
+                            <label for="name">Animal name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter animal name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalId">Animal id</label>
+                            <input type="number" name="animalId" id="animalId" placeholder="Enter animal id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" name="location" id="location" placeholder="Enter location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ranger">Ranger's name</label>
+                            <input type="text" name="ranger" id="ranger" placeholder="Ranger's name" required>
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+                <div id="endangered">
+                    <h3 class="text-center">Endangered animals</h3>
+                    <form action="/wildlife/new" method="post">
+                        <div class="form-group">
+                            <label for="name">Animal name</label>
+                            <input type="text" name="name" id="name" placeholder="Enter animal name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="animalId">Animal id</label>
+                            <input type="number" name="animalId" id="animalId" placeholder="Enter animal id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" name="location" id="location" placeholder="Enter location" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ranger">Ranger's name</label>
+                            <input type="text" name="ranger" id="ranger" placeholder="Ranger's name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="health">Health</label>
+                            <select class="form-control" id="health" name="health" required>
+                                <option>Healthy</option>
+                                <option>Ill</option>
+                                <option>Okay</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="age">Age</label>
+                            <select class="form-control" id="age" name="age" required>
+                                <option>newborn</option>
+                                <option>young</option>
+                                <option>adult</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+            </div>
+        </div>
+
+    </div>
+{{/partial}}
