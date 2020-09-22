@@ -3,6 +3,7 @@ package models;
 import org.sql2o.Connection;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class Animal extends Wildlife {
@@ -24,18 +25,6 @@ public class Animal extends Wildlife {
 
 
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Animal animal = (Animal) o;
-        return id == animal.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return 0;
-    }
 
 
 }

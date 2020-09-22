@@ -10,5 +10,8 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "layout.hbs");
         }, new HandlebarsTemplateEngine());
+
+        get()
     }
+
 }

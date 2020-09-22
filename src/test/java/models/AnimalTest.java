@@ -32,16 +32,19 @@ public class AnimalTest {
         Animal testAnimal = new Animal("Lion");
         assertEquals("animal",testAnimal.getType());
     }
+
+
     @Test
     public void equals_returnTrueWhenObjectsHaveSameValues_true(){
         Animal testAnimal = new Animal("Lion");
         Animal testAnimal2 = new Animal("Elephant");
         assertTrue(testAnimal.equals(testAnimal2));
     }
-    @Test
-    public void save_addAnimalToDatabase_void(){
-        Animal testAnimal = new Animal("Lion");
-        testAnimal.save();
-        assertTrue(Animal.all().get(0).equals(testAnimal));
-    }
+
+//    @Test
+//    public void save_addAnimalToDatabase_void(){
+//        Animal testAnimal = new Animal("Lion");
+//        testAnimal.save();
+//        assertTrue(Animal.all().get(0).equals(testAnimal));
+//    }
 }
