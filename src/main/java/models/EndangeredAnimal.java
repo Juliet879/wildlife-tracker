@@ -12,16 +12,18 @@ public class EndangeredAnimal extends Wildlife{
     public static final String ADULT = "adult";
     public static final String DATABASE_TYPE = "endangered animal";
 
-    private String age;
+    private Integer age;
     private String health;
 
-    public EndangeredAnimal(String name) {
+    public EndangeredAnimal(String name, Integer age ,String health) {
         this.name = name;
+        this.age = age;
+        this.health = health;
         this.type = DATABASE_TYPE;
     }
 
   //
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
@@ -87,10 +89,12 @@ public class EndangeredAnimal extends Wildlife{
 
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (name, type) VALUES (:name, :type);";
+            String sql = "INSERT INTO animals (name,  age) VALUES (:name, :age);";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("name", this.name)
-                    .addParameter("type", this.type)
+                    //.addParameter("type", this.type)
+                    .addParameter("age", this.age)
+                    //.addParameter("health", this.health)
                     .executeUpdate()
                     .getKey();
             this.setId(id);

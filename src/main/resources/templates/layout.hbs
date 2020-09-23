@@ -1,38 +1,61 @@
-{{#block "header"}}
+{{#block "title"}}
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<html lang="en">
 
-        <link rel="stylesheet" type="text/css" href="css/styles.css">
-        <link rel='stylesheet' href='/app.css'>
-        <title>Document</title>
-    </head>
-    <body>
-         <header>
-             <nav class="navbar justify-content-end bg-dark">
-                 <ul class="nav">
-                     <a class="nav-item nav-link" href="/"><li>HOME</li></a>
-                     <a class="nav-item nav-link" href="/wildlife/new"><li>TRACK ANIMALS</li></a>
-                     <a class="nav-item nav-link" href="/all-animals"><li>ALL ANIMALS</li></a>
-                     <a class="nav-item nav-link" href="/sightings"><li>SIGHTINGS</li></a>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
 
-                 </ul>
-             </nav>
+    <title>Document</title>
+</head>
+{{/block }}
 
-             <h1 class="text-center">TRACKING OUR BEAUTIFUL WILD ANIMALS</h1>
-             <div class="text-center">
-                 <a href="/wildlife/new"><button class="btn btn-outline-success">ADD ANIMAL</button></a>
-             </div>
-         </header>
-{{/block}}
-{{#block "content"}}
 
-{{/block}}
-{{#block "footer"}}
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    </body>
-    </html>
-{{/block}}
+<body>
+    <div class="container-fluid main-page">
+        <nav class="navbar justify-content-end bg-dark">
+            <ul class="nav">
+                <a class="nav-item nav-link" href="/">
+                    <li>HOME</li>
+                </a>
+                <a class="nav-item nav-link" href="/wildlife/new">
+                    <li>TRACK ANIMALS</li>
+                </a>
+                <a class="nav-item nav-link" href="/all-animals">
+                    <li>ALL ANIMALS</li>
+                </a>
+                <a class="nav-item nav-link" href="/sightings">
+                    <li>SIGHTINGS</li>
+                </a>
+
+            </ul>
+        </nav>
+        {{#block "content"}}
+        {{/block}}
+    </div>
+
+    <style>
+        .main-page {
+            background-image: url("/images/blackbuck-moon.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 640px;
+        }
+    </style>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

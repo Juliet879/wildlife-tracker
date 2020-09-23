@@ -1,3 +1,6 @@
-.container{
-   background-image:url(images/background.jpg);
+.main-page {
+   background-image:url("https://thumbs.dreamstime.com/z/silhouette-african-animals-background-sunset-large-sun-dark-67252444.jpg");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
 }

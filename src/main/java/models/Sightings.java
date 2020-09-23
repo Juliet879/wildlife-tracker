@@ -7,18 +7,23 @@ import java.util.List;
 public class Sightings {
     private int id;
     private String location;
-    private String ranger_name;
-    private int wildlife_id ;
-    private Timestamp time;
+    private String rangername;
+    private int wildlifeid ;
+//    private Timestamp lastseen;
+    private String health;
+    private String age;
 
 
-    public Sightings(String location,String ranger_name,int wildlife_id){
+    public Sightings(String location,String rangername,int wildlifeid, String health, String age){
         this.location = location;
-        this.ranger_name = ranger_name;
-        this.wildlife_id = wildlife_id;
+        this.rangername = rangername;
+        this.wildlifeid = wildlifeid;
+//        this.lastseen = lastseen;
+        this.health = health;
+        this.age = age;
     }
 
-    public static List<Sightings> all() {
+    public static List<Object> all() {
         return null;
     }
 
@@ -32,19 +37,34 @@ public class Sightings {
     }
 
     public int getWildlifeId() {
-        return wildlife_id;
+        return wildlifeid;
     }
 
     public String getRangerName() {
-        return ranger_name;
+        return rangername;
     }
+
+//    public Timestamp getLastseen() {
+//        return lastseen;
+//    }
+
+    public String getHealth() {
+        return health;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
     public void save(){
        try(Connection con = DB.sql2o.open()){
-           String sql = "INSERT INTO sightings(location,ranger_name,wildlife_id,time) VALUES (:location, :ranger_name, :wildlife_id, now()";
-           this.id = (int)con.createQuery(sql,true)
+           String sql = "INSERT INTO sightings(location,rangername,wildlifeid) VALUES (:location, :rangername, :wildlifeid)";
+           this.id = (int) con.createQuery(sql,true)
                    .addParameter("location",this.location)
-                   .addParameter("ranger_name",this.ranger_name)
-                   .addParameter("wildlife_id", this.wildlife_id)
+                   .addParameter("rangername",this.rangername)
+                   .addParameter("wildlifeid", this.wildlifeid)
+                   //.addParameter("health", this.health)
+                   //.addParameter("age", this.age)
                    .executeUpdate()
                    .getKey();
        }

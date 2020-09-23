@@ -9,10 +9,16 @@ import java.util.Objects;
 public class Animal extends Wildlife {
     public int id;
     public static final String DATABASE_TYPE = "animal";
+    public String age;
+    public String time;
+    public String health;
 
     public Animal(String name){
          this.name = name;
+         this.age = "";
+         this.health = "";
          this.type = DATABASE_TYPE;
+         this.time = "";
     }
 
     public static List<Animal> all(){

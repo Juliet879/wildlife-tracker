@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AnimalTest {
@@ -38,13 +40,16 @@ public class AnimalTest {
     public void equals_returnTrueWhenObjectsHaveSameValues_true(){
         Animal testAnimal = new Animal("Lion");
         Animal testAnimal2 = new Animal("Elephant");
-        assertTrue(testAnimal.equals(testAnimal2));
+        assertTrue(!testAnimal.equals(testAnimal2));
     }
 
-//    @Test
-//    public void save_addAnimalToDatabase_void(){
-//        Animal testAnimal = new Animal("Lion");
-//        testAnimal.save();
-//        assertTrue(Animal.all().get(0).equals(testAnimal));
-//    }
+    @Test
+    public void save_addAnimalToDatabase_void(){
+        Animal testAnimal = new Animal("Lion");
+         testAnimal.save();
+        //List<Animal> animal_list = Animal.all();
+        //System.out.println(animal_list);
+
+        assertTrue(Animal.all().get(0).equals(testAnimal));
+    }
 }
