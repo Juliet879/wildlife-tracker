@@ -2,7 +2,6 @@ package models;
 
 import org.sql2o.Connection;
 import java.util.List;
-import java.util.Objects;
 
 public class EndangeredAnimal extends Wildlife{
     public static final String HEALTHY = "healthy";
@@ -56,7 +55,7 @@ public class EndangeredAnimal extends Wildlife{
 //    }
 //
 
-    public void saveHealth(){
+    public void saveHealth(String health){
         String sql = "UPDATE animals SET health = :health WHERE id=:id;";
         try (Connection con = DB.sql2o.open()){
             con.createQuery(sql)
@@ -98,4 +97,6 @@ public class EndangeredAnimal extends Wildlife{
         }
     }
 
+    public void saveAge(String age) {
+    }
 }

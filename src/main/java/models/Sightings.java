@@ -2,9 +2,8 @@ package models;
 import org.sql2o.Connection;
 
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.util.List;
-import java.util.Objects;
+
 public class Sightings {
     private int id;
     private String location;
@@ -19,7 +18,7 @@ public class Sightings {
         this.wildlife_id = wildlife_id;
     }
 
-    public static List<Object> all() {
+    public static List<Sightings> all() {
         return null;
     }
 

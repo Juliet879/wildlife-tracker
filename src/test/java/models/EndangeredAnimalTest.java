@@ -71,7 +71,7 @@ public class EndangeredAnimalTest {
         EndangeredAnimal testAnimal = new EndangeredAnimal("Lion");
         testAnimal.save();
         testAnimal.setHealth("okay");
-        testAnimal.saveHealth();
+        testAnimal.saveHealth(health);
         assertEquals("okay",EndangeredAnimal.all().get(1).getHealth());
     }
 
