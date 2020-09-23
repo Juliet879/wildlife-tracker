@@ -1,0 +1,40 @@
+{{#partial "content"}}
+    <nav class="navbar justify-content-end bg-dark">
+        <ul class="nav">
+            <a class="nav-item nav-link" href="/"><li>HOME</li></a>
+            <a class="nav-item nav-link" href="/wildlife/new"><li>TRACK ANIMALS</li></a>
+            <a class="nav-item nav-link" href="/all-animals"><li>ALL ANIMALS</li></a>
+            <a class="nav-item nav-link" href="/sightings"><li>SIGHTINGS</li></a>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <h1 class="text-center">Sightings</h1>
+        {{#if sightings}}
+            <table class="table table-dark">
+               <tr>
+                   <th scope="col">Ranger's name</th>
+                   <th scope="col">Location</th>
+                   <th scope="col">Animal's ID</th>
+                   <th scope="col">Time Tracked</th>
+               </tr>
+
+        <tbody>
+        {{#each sightings}}
+            <tr>
+                <td>{{rangerName}}</td>
+                <td>{{location}}</td>
+                <td>{{wildlifeId}}</td>
+                <td>{{time}}</td>
+
+            </tr>
+        {{/each}}
+        </tbody>
+            </table>
+        {{else}}
+            <h2>No sightings so far</h2>
+        {{/if}}
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}

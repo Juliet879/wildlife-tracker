@@ -1,0 +1,49 @@
+{{#partial "content"}}
+        <nav class="navbar justify-content-end bg-dark">
+            <ul class="nav">
+                <a class="nav-item nav-link" href="/"><li>HOME</li></a>
+                <a class="nav-item nav-link" href="/wildlife/new"><li>TRACK ANIMALS</li></a>
+                <a class="nav-item nav-link" href="/all-animals"><li>ALL ANIMALS</li></a>
+                <a class="nav-item nav-link" href="/sightings"><li>SIGHTINGS</li></a>
+
+            </ul>
+        </nav>
+
+        {{#if animal}}
+            <h2 class="text-center" style="color:blue">Usual animals</h2>
+            <div class="container">
+                <div class="row">
+                     {{#each animal}}
+                         <div class="col-mod-4">
+                             <h4>Animal name: {{name}}</h4>
+                             <p>Type: {{type}}</p>
+                             <p>Location: {{location}}</p>
+                         </div>
+                     {{/each}}
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            {{else}}
+            <h3>No animal track</h3>
+        {{/if}}
+
+        {{#if "endangeredAnimal"}}
+            <h2 class="text-center" style="color:red">Endangered animals</h2>
+            <div class="container">
+                <div class="row">
+                    {{#each endangeredAnimal}}
+                        <div class="col-mod-4">
+                            <h4>Animal name: {{name}}</h4>
+                            <p>Type: {{type}}</p>
+                            <p>Age: {{age}}</p>
+                            <p>Location: {{location}}</p>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{/if}}
+        {{else}}
+    <h3>No endangered animal</h3>
+
+{{/partial}}
+{{> layout.hbs}}
