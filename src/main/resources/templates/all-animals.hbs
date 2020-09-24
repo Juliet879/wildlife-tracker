@@ -8,42 +8,43 @@
 
             </ul>
         </nav>
-
-        {{#if animal}}
-            <h2 class="text-center" style="color:blue">Usual animals</h2>
+        {{#if animals}}
+            <h2 class="text-center" style="color:white;">Common animals</h2>
             <div class="container">
                 <div class="row">
-                     {{#each animal}}
-                         <div class="col-mod-4">
-                             <h4>Animal name: {{name}}</h4>
-                             <p>Type: {{type}}</p>
-                             <p>Location: {{location}}</p>
-                         </div>
-                     {{/each}}
-                </div>
-            </div>
-            <hr class="mt-4 mb-4">
-            {{else}}
-            <h3>No animal track</h3>
-        {{/if}}
-
-        {{#if "endangeredAnimal"}}
-            <h2 class="text-center" style="color:red">Endangered animals</h2>
-            <div class="container">
-                <div class="row">
-                    {{#each endangeredAnimal}}
-                        <div class="col-mod-4">
-                            <h4>Animal name: {{name}}</h4>
-                            <p>Type: {{type}}</p>
-                            <p>Age: {{age}}</p>
-                            <p>Location: {{location}}</p>
+                    {{#each animals}}
+                        <div class="col-md-4">
+                            <div class="card p-4 mt-2">
+                                <h3>Animal species: {{name}}</h3>
+                                <p>Type: {{type}}</p>
+                                <p>{{location}}</p>
+                            </div>
                         </div>
                     {{/each}}
                 </div>
             </div>
-        {{/if}}
+            <hr class="mt-4 mb-4">
         {{else}}
-    <h3>No endangered animal</h3>
-
+            <h1 class="text-center">No animal to track.</h1>
+        {{/if}}
+        {{#if endangeredAnimals}}
+            <h2 class="text-center" style="color: red">Endangered animals</h2>
+            <div class="container">
+                <div class="row">
+                    {{#each endangeredAnimals}}
+                        <div class="col-md-4">
+                            <div class="card p-4 mt-2">
+                                <h3>Animal species: {{name}}</h3>
+                                <p>Type: {{type}}</p>
+                                <p>Age: {{age}}</p>
+                                <p>Health status: {{health}}</p>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        {{else}}
+            <h2>No endangered animal at the moment</h2>
+        {{/if}}
 {{/partial}}
-{{> layout.hbs}}
+{{>layout.hbs}}

@@ -8,33 +8,32 @@
 
         </ul>
     </nav>
-    <div class="container">
-        <h1 class="text-center">Sightings</h1>
-        {{#if sightings}}
-            <table class="table table-dark">
-               <tr>
-                   <th scope="col">Ranger's name</th>
-                   <th scope="col">Location</th>
-                   <th scope="col">Animal's ID</th>
-                   <th scope="col">Time Tracked</th>
-               </tr>
-
-        <tbody>
-        {{#each sightings}}
-            <tr>
-                <td>{{rangerName}}</td>
-                <td>{{location}}</td>
-                <td>{{wildlifeId}}</td>
-                <td>{{time}}</td>
-
-            </tr>
-        {{/each}}
-        </tbody>
-            </table>
-        {{else}}
-            <h2>No sightings so far</h2>
-        {{/if}}
-    </div>
-
-{{/partial}}
-{{> layout.hbs}}
+        <div class="container" style="color:white;">
+            <h1 class="text-center sight ">Sightings</h1>
+            {{#if  sightings}}
+                <table class="table table-hover table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">Ranger's name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Animal's ID</th>
+                        <th scope="col">Time Tracked</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each sightings}}
+                        <tr>
+                            <td>{{rangerName}}</td>
+                            <td>{{location}}</td>
+                            <td>{{wildlifeId}}</td>
+                            <td>{{time}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            {{else}}
+                <h2>No sightings so far</h2>
+            {{/if}}
+        </div>
+    {{/partial}}
+    {{>layout.hbs}}
