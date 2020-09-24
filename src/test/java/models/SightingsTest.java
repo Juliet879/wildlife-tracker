@@ -1,7 +1,5 @@
 package models;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -9,45 +7,48 @@ import static org.junit.Assert.*;
 
 public class SightingsTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
-
-    @After
-    public void tearDown() throws Exception {
-    }
     @Rule
-    public DatabaseRule database = new DatabaseRule();
+    public DatabaseRule databaseRule = new DatabaseRule();
 
     @Test
     public void sightings_instantiateCorrectly_object(){
         Sightings testSightings = setUpSettings();
         assertTrue(testSightings instanceof Sightings);
     }
+
     @Test
     public void sightings_instantiateWithCorrectLocation_String(){
         Sightings testSightings = setUpSettings();
-        assertEquals("Nyali",testSightings.getLocation());
+        assertEquals("Mt Kenya",testSightings.getLocation());
     }
     @Test
-    public void sightings_instantiateWithCorrectRangerName_String(){
+    public void sightings_instantiateWithCorrectRangerName_string(){
         Sightings testSightings = setUpSettings();
-        assertEquals("Juliet",testSightings.getRangerName());
+        assertEquals("victor",testSightings.getRangerName());
     }
     @Test
-    public void sightings_instantiateWithCorrectWildlifeId_int(){
+    public void sightings_instantiateWithCorrectWildlifeId_string(){
         Sightings testSightings = setUpSettings();
-        assertEquals(0,testSightings.getWildlifeId());
+        assertEquals(1, testSightings.getWildlifeId());
     }
+//    @Test
+//    public void save_addSightingToTheDB_void(){
+//        Sightings testSightings = setUpSettings();
+//        testSightings.save();
+//        assertTrue(!Sightings.all().get(0).equals(testSightings));
+//    }
+
     @Test
-    public void save_addSightingsToDB_void(){
+    public void all_returnsAllSightingsFromDB_List(){
         Sightings testSightings = setUpSettings();
         testSightings.save();
-        //assertTrue(Sightings.all().get(0).equals(testSightings));
+        Sightings testSightings2 = setUpSettings();
+        testSightings2.save();
+        assertEquals(2,Sightings.all().size());
     }
 
-   public Sightings setUpSettings(){
-       return new Sightings("Nyali", "Juliet", 0, "Okay", "Adult");
-
-   }
+    //helper class
+    public Sightings setUpSettings(){
+        return new Sightings("Mt Kenya","victor",1);
+    }
 }

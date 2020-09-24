@@ -1,29 +1,31 @@
 package models;
 
+
 import org.sql2o.Connection;
+
 import java.util.List;
 
-public class EndangeredAnimal extends Wildlife{
-    public static final String HEALTHY = "healthy";
-    public static final String OKAY = "okay";
-    public static final String ILL = "ill";
-    public static final String NEWBORN = "newborn";
-    public static final String YOUNG = "young";
-    public static final String ADULT = "adult";
+public class EndangeredAnimal extends Wildlife {
+
+    public static final String HEALTHY ="healthy";
+    public static final String OKAY ="okay";
+    public static final String ILL ="ill";
+    public static final String NEWBORN ="newborn";
+    public static final String YOUNG ="young";
+    public static final String ADULT ="adult";
+    //discriminator
     public static final String DATABASE_TYPE = "endangered animal";
 
-    private Integer age;
+    private String age;
     private String health;
 
-    public EndangeredAnimal(String name, Integer age ,String health) {
+    public EndangeredAnimal(String name) {
+//        this.health = health;
         this.name = name;
-        this.age = age;
-        this.health = health;
         this.type = DATABASE_TYPE;
     }
 
-  //
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -31,76 +33,30 @@ public class EndangeredAnimal extends Wildlife{
         return health;
     }
 
-    public void setHealth(String health){
-        this.health = health;
+    public static List<EndangeredAnimal> all(){
+        try (Connection con = DB.sql2o.open()){
+            String queryEndangered = "SELECT * FROM animals WHERE type='endangered animal'";
+            return con.createQuery(queryEndangered)
+                    .executeAndFetch(EndangeredAnimal.class);
+        }
     }
 
-
-        public static List<EndangeredAnimal> all(){
-            try(Connection con = DB.sql2o.open()){
-                String queryAnimals = "SELECT * FROM animals WHERE type='endangered animal'";
-                return con.createQuery(queryAnimals)
-                        .executeAndFetch(EndangeredAnimal.class);
-            }
-        }
-
-
-
-//    public void updateAge(String age){
-//        String sql = "UPDATE animals SET age=:age WHERE id=:id";
-//        try (Connection con = DB.sql2o.open()){
-//            con.createQuery(sql)
-//                    .addParameter("age", age)
-//                    .addParameter("id", this.id)
-//                    .executeUpdate();
-//        }
-//    }
-//
-
-    public void saveHealth(String health){
-        String sql = "UPDATE animals SET health = :health WHERE id=:id;";
+    public void  saveAge(String age){
+        String sql ="UPDATE animals SET age=:age WHERE id=:id";
         try (Connection con = DB.sql2o.open()){
             con.createQuery(sql)
-                    .addParameter("health", this.health)
+                    .addParameter("age", age)
                     .addParameter("id", this.id)
                     .executeUpdate();
         }
     }
-
-//    public void updateHealth(String health) {
-//        try(Connection con = DB.sql2o.open()) {
-//            String sql = "UPDATE animals SET health=:health WHERE id=:id;";
+//    public void saveHealth(String health){
+//        String sql ="UPDATE animals SET health=:health WHERE id=:id";
+//        try (Connection con = DB.sql2o.open()){
 //            con.createQuery(sql)
 //                    .addParameter("health", health)
 //                    .addParameter("id", this.id)
 //                    .executeUpdate();
 //        }
 //    }
-
-    public static EndangeredAnimal find(int id) {
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "SELECT * FROM animals WHERE id=:id;";
-            EndangeredAnimal Endangered = con.createQuery(sql)
-                    .addParameter("id", 1)
-                    .executeAndFetchFirst(EndangeredAnimal.class);
-            return Endangered;
-        }
-    }
-
-    public void save() {
-        try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO animals (name,  age) VALUES (:name, :age);";
-            this.id = (int) con.createQuery(sql, true)
-                    .addParameter("name", this.name)
-                    //.addParameter("type", this.type)
-                    .addParameter("age", this.age)
-                    //.addParameter("health", this.health)
-                    .executeUpdate()
-                    .getKey();
-            this.setId(id);
-        }
-    }
-
-    public void saveAge(String age) {
-    }
 }
