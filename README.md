@@ -1,7 +1,10 @@
-#WILDLIFE-TRACKER
+## WILDLIFE-TRACKER
+
+
    <img src="images/screen.png">
-#WILDLIFE-TRACKER
-    September 24th, 2020.
+
+  ## wildlife
+     -September 24th, 2020.
     ###By **Juliet Gisemba**
     
 ##Description
