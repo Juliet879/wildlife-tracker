@@ -20,7 +20,6 @@ public class EndangeredAnimal extends Wildlife {
     private String health;
 
     public EndangeredAnimal(String name) {
-//        this.health = health;
         this.name = name;
         this.type = DATABASE_TYPE;
     }
@@ -50,13 +49,14 @@ public class EndangeredAnimal extends Wildlife {
                     .executeUpdate();
         }
     }
-//    public void saveHealth(String health){
-//        String sql ="UPDATE animals SET health=:health WHERE id=:id";
-//        try (Connection con = DB.sql2o.open()){
-//            con.createQuery(sql)
-//                    .addParameter("health", health)
-//                    .addParameter("id", this.id)
-//                    .executeUpdate();
-//        }
-//    }
+    public void saveHealth(String health){
+        String sql ="UPDATE animals SET health=:health WHERE id=:id";
+        try (Connection con = DB.sql2o.open()){
+            con.createQuery(sql)
+                    .addParameter("health", health)
+                    .addParameter("id", this.id)
+                    .executeUpdate();
+        }
+    }
+
 }

@@ -31,12 +31,12 @@ public class SightingsTest {
         Sightings testSightings = setUpSettings();
         assertEquals(1, testSightings.getWildlifeId());
     }
-//    @Test
-//    public void save_addSightingToTheDB_void(){
-//        Sightings testSightings = setUpSettings();
-//        testSightings.save();
-//        assertTrue(!Sightings.all().get(0).equals(testSightings));
-//    }
+    @Test
+    public void save_addSightingToTheDB_void(){
+        Sightings testSightings = setUpSettings();
+        testSightings.save();
+        assertTrue(Sightings.all().get(0).equals(testSightings));
+    }
 
     @Test
     public void all_returnsAllSightingsFromDB_List(){

@@ -3,7 +3,6 @@ package models;
 import org.sql2o.Connection;
 
 import java.sql.Timestamp;
-import java.text.DateFormat;
 import java.util.List;
 import java.util.Objects;
 

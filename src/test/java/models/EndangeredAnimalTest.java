@@ -50,15 +50,15 @@ public class EndangeredAnimalTest {
         EndangeredAnimal testAnimal = setUpEndangeredAnimal();
         testAnimal.save();
         testAnimal.saveAge("newborn");
-       assertEquals("newborn",EndangeredAnimal.all().get(0).getAge());
+        assertEquals("newborn",EndangeredAnimal.all().get(0).getAge());
     }
-//    @Test
-//    public void saveHealth_addsHealthOfEndangeredAnimalToDB_void(){
-//        EndangeredAnimal testAnimal = setUpEndangeredAnimal();
-//        testAnimal.save();
-//        testAnimal.saveHealth("okay");
-//        assertEquals("okay",EndangeredAnimal.all().get(0).getHealth());
-//    }
+    @Test
+    public void saveHealth_addsHealthOfEndangeredAnimalToDB_void(){
+        EndangeredAnimal testAnimal = setUpEndangeredAnimal();
+        testAnimal.save();
+        testAnimal.saveHealth("okay");
+        assertEquals("okay",EndangeredAnimal.all().get(0).getHealth());
+    }
     @Test
     public void animal_instantiateWithCorrectId_int(){
 

@@ -14,7 +14,7 @@
 
 <body>
     <div class="container-fluid main-page">
-        <nav class="navbar justify-content-end bg-dark">
+        <nav class="navbar justify-content-end bg-dark" id="navbar-custom">
             <ul class="nav">
                 <a class="nav-item nav-link" href="/">
                     <li style="color:white;">HOME</li>
@@ -37,11 +37,16 @@
 
     <style>
         .main-page {
-            background-image: url("https://picturecorrect-wpengine.netdna-ssl.com/wp-content/uploads/2017/12/capturing-wildlife-tips.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url("https://lh3.googleusercontent.com/proxy/Vzu8vOvWt3zrgicBMyIE_k28D2Hd6HaNMdoU1e92Y_DF8wb9hEGc3dpsWvrLYt8qRKF8UMsytFsw_h5rqMR81aofI6R56zZeXUSXtGeN8YoQH0pAE_MobZT_cByXPg_5");
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
-            height: 640px;
+            height: 100vh;
+        }
+        #navbar-custom{
+        position: absolute;
+        left:0;
+        right:0;
         }
     </style>
 
