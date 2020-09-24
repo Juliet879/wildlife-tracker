@@ -31,10 +31,10 @@ This is application that allows Rangers to track wildlife sightings in the area.
     -Create table CREATE TABLE table_name(name varchar)
     
     
-    -In PSQL:
-CREATE DATABASE wildlife_tracker;
-CREATE TABLE animals (id serial PRIMARY KEY, name varchar ,type varchar ,age varchar, health varchar);
-CREATE TABLE sightings (id serial PRIMARY KEY, location varchar, ranger_name varchar, wildlife_id int );
+    ## In PSQL:
+     - CREATE DATABASE wildlife_tracker;
+     - CREATE TABLE animals (id serial PRIMARY KEY, name varchar ,type varchar ,age varchar, health varchar);
+     - CREATE TABLE sightings (id serial PRIMARY KEY, location varchar, ranger_name varchar, wildlife_id int );
   
  ## Known Bugs
 - There are no known bugs currently. The page works as expected.
