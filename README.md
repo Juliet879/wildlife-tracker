@@ -1,7 +1,7 @@
 ## WILDLIFE-TRACKER
 
 
-   <img src="images/screen.png">
+   <img src="screen.png">
 
   ## wildlife
      -September 24th, 2020.
